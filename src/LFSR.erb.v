@@ -1,5 +1,5 @@
 
-model LFSR_<%= LFSR_BITS %>BITS ( PRNG, SEED, clk);
+module LFSR_<%= LFSR_BITS %>BITS ( PRNG, SEED, clk);
     
     //LFSR bits are assigned during the erb compiling process
     parameter   REG_BITS    = <%= LFSR_BITS %> ;

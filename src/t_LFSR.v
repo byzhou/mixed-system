@@ -4,6 +4,7 @@ module t_LFSR () ;
   
     reg clk; 
 
+    //populate 16 bit LFSR, which makes up the upper layer of the PRNG
     
     
     wire [15 : 0]     O_LFSR_UP ;
@@ -11,9 +12,10 @@ module t_LFSR () ;
     LFSR_16BITS LFSR_UP (
         .clk(clk),
         .SEED(SEED_UP),
-        .PRNG(O_LFSR_UP>)
+        .PRNG(O_LFSR_UP)
     );
 
+    //populate 8 bit LFSR, which makes up the lower layer of the PRNG
     
     
     wire [7 : 0]     O_LFSR_DOWN ;
@@ -21,21 +23,23 @@ module t_LFSR () ;
     LFSR_8BITS LFSR_DOWN (
         .clk(clk),
         .SEED(SEED_DOWN),
-        .PRNG(O_LFSR_DOWN>)
+        .PRNG(O_LFSR_DOWN)
     );
 
     wire [7 : 0]     O_LFSR ;
 
+    //combine the two LFSR to generate a longer period
     assign O_LFSR = O_LFSR_UP[7 : 0] ^ O_LFSR_DOWN ;
 
     initial begin
         clk         <= 0 ;
-        SEED_UP     <= 4h'0001 ;
-        SEED_DOWN   <= 2h'01 ;
+        SEED_UP     <= 4'h0001 ;
+        SEED_DOWN   <= 2'h01 ;
     end
 
     always begin
         #5 clk <= ~clk ;
+        #100 $finish;
     end
 
 endmodule
@@ -45,19 +49,23 @@ endmodule
     
     
 model LFSR_16BITS ( PRNG, SEED, clk);
-
+    
+    //LFSR bits are assigned during the erb compiling process
     parameter   REG_BITS    = 16 ;
-    parameter   INIT        = 4h'1111 ; 
-
+    parameter   INIT        = 4'h1111 ; 
+    
+    //read interface for the verilog
     input wire [REG_BITS-1:0]   SEED ;
     input wire                  clk ;
     output reg [REG_BITS-1:0]   PRNG ;
 
     initial begin
+        //initialization
         PRNG <= INIT ;
     end
 
     always @(posedge clk) begin
+        //linear shifting part
         
             PRNG[1] <= PRNG[0] ;
         
@@ -89,6 +97,7 @@ model LFSR_16BITS ( PRNG, SEED, clk);
         
             PRNG[15] <= PRNG[14] ;
         
+        //including the seed to the feedback loop
         PRNG[0] <= 
          
             PRNG[0] ^
@@ -169,19 +178,23 @@ endmodule
     
     
 model LFSR_8BITS ( PRNG, SEED, clk);
-
+    
+    //LFSR bits are assigned during the erb compiling process
     parameter   REG_BITS    = 8 ;
-    parameter   INIT        = 2h'11 ; 
-
+    parameter   INIT        = 2'h11 ; 
+    
+    //read interface for the verilog
     input wire [REG_BITS-1:0]   SEED ;
     input wire                  clk ;
     output reg [REG_BITS-1:0]   PRNG ;
 
     initial begin
+        //initialization
         PRNG <= INIT ;
     end
 
     always @(posedge clk) begin
+        //linear shifting part
         
             PRNG[1] <= PRNG[0] ;
         
@@ -197,6 +210,7 @@ model LFSR_8BITS ( PRNG, SEED, clk);
         
             PRNG[7] <= PRNG[6] ;
         
+        //including the seed to the feedback loop
         PRNG[0] <= 
          
             PRNG[0] ^

@@ -11,14 +11,19 @@ wave_tcl	:= readWaveforms.tcl
 tcl_files	:= $(tcldir)/$(readin_tcl) $(tcldir)/$(wave_tcl) 
 
 #src files
-#erbfiles	:= $(shell ls $(srcdir)/*.erb.v)
+#all the erb module files
+modulefiles := $(shell ls -d $(srcdir)/* | grep "\.erb\.v" | grep -v "t_" )
+#all the erb moduel testbenches
+testBench   := $(shell ls -d $(srcdir)/* | grep "\.erb\.v" | grep "t_" )
+#testbench after erb
+vTestBench	:= $(shell ls -d $(srcdir)/* | grep "t_" | grep -v "\.erb" )
 erbfiles	:= $(srcdir)/t_LFSR.erb.v
 srcfiles	:= $(erbfiles:%.erb.v=%.v) 
 
 #simulate rules
 #################################################################
-toplevel 	:= top
-runtime		:= 10ns
+toplevel 	:= t_LFSR
+runtime		:= 100ns
 #################################################################
 
 # define build directory
@@ -34,23 +39,27 @@ vsim_vars	:= \
 .PHONY: prep vsim view clean all default
 
 #search all the .erb.v files and erb them
-vpath %.erb.v $(srcdir)
+#vpath %.erb.v $(srcdir)
 
 #erb rules
-$(srcdir)/%.v:%.erb.v
+$(srcdir)\/%.v:%.erb.v
 	erb $< > $@
 
-all: prep 
+all:vsim
+
+#verilog rules
+$(srcfiles):$(testBench)
+$(testBench):$(modulefiles)
 
 #generate the build directory
-$(build_dir):
+$(build_dir): $(srcfiles)
 	mkdir $(build_dir);\
 	echo -e "*\n!.gitignore" > $(build_dir)/.gitignore
 
 #copy all the src files do the build directory and all the tcl files
-prep: | $(build_dir) $(srcfiles)
+prep: | $(build_dir) 
 	cp $(tcl_files) $(build_dir)/;\
-	cp $(srcdir)/*.v $(build_dir)/;\
+	cp $(vTestBench) $(build_dir)/;\
 	echo '$(vsim_vars)' > $(build_dir)/$(makegen_tcl);\
 	echo -e "*\n!.gitignore" > $(build_dir)/.gitignore
 
