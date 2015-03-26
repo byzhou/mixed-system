@@ -1,4 +1,3 @@
-
 module LFSR_<%= LFSR_BITS %>BITS ( PRNG, SEED, clk);
     
     //LFSR bits are assigned during the erb compiling process
@@ -12,7 +11,11 @@ module LFSR_<%= LFSR_BITS %>BITS ( PRNG, SEED, clk);
 
     initial begin
         //initialization
-        PRNG <= INIT ;
+        PRNG = INIT ;
+        `ifdef DEBUG
+            $display("INIT values : %b \n " , INIT ) ;
+            $display("PRNG values : %b \n " , PRNG ) ;
+        `endif
     end
 
     always @(posedge clk) begin

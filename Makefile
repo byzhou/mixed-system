@@ -43,6 +43,7 @@ $(testBench):
 	erb $(srcdir)/$(toplevel).erb.v > $(srcdir)/$(toplevel).v
 
 $(vTestBench): $(testBench) 
+	erb $(srcdir)/$(toplevel).erb.v > $(srcdir)/$(toplevel).v
 
 $(testBench):$(modulefiles)
 

@@ -1,12 +1,16 @@
 `timescale 1ns/1ps
+`define DEBUG
 
 module t_LFSR () ;
   
     reg clk; 
+    //initialization
+    
+    
+    
+    
 
-    //populate 16 bit LFSR, which makes up the upper layer of the PRNG
-    
-    
+    //populate UP bit LFSR, which makes up the upper layer of the PRNG
     wire [15 : 0]     O_LFSR_UP ;
     reg [15 : 0]      SEED_UP ;
     LFSR_16BITS LFSR_UP (
@@ -15,9 +19,7 @@ module t_LFSR () ;
         .PRNG(O_LFSR_UP)
     );
 
-    //populate 8 bit LFSR, which makes up the lower layer of the PRNG
-    
-    
+    //populate DOWN bit LFSR, which makes up the lower layer of the PRNG
     wire [7 : 0]     O_LFSR_DOWN ;
     reg [7 : 0]      SEED_DOWN ;
     LFSR_8BITS LFSR_DOWN (
@@ -33,26 +35,29 @@ module t_LFSR () ;
 
     initial begin
         clk         <= 0 ;
-        SEED_UP     <= 4'h0001 ;
-        SEED_DOWN   <= 2'h01 ;
+        SEED_UP     <= 16'h5;
+        SEED_DOWN   <= 8'he;
+        #100 $finish;
     end
 
     always begin
+        `ifdef DEBUG
+            $display ( " UP LFSR %h \n " , O_LFSR_UP ) ;
+            $display ( " DOWN LFSR %h \n " , O_LFSR_DOWN ) ;
+        `endif
         #5 clk <= ~clk ;
-        #100 $finish;
     end
 
 endmodule
     
-    //generate LFSR_8bit block
+    //generate LFSR_DOWNbit block
     
     
-    
-module LFSR_16BITS ( PRNG, SEED, clk);
+    module LFSR_16BITS ( PRNG, SEED, clk);
     
     //LFSR bits are assigned during the erb compiling process
     parameter   REG_BITS    = 16 ;
-    parameter   INIT        = 4'h1111 ; 
+    parameter   INIT        = 16'h00FF ; 
     
     //read interface for the verilog
     input wire [REG_BITS-1:0]   SEED ;
@@ -61,7 +66,11 @@ module LFSR_16BITS ( PRNG, SEED, clk);
 
     initial begin
         //initialization
-        PRNG <= INIT ;
+        PRNG = INIT ;
+        `ifdef DEBUG
+            $display("INIT values : %b \n " , INIT ) ;
+            $display("PRNG values : %b \n " , PRNG ) ;
+        `endif
     end
 
     always @(posedge clk) begin
@@ -172,15 +181,14 @@ endmodule
 
 
 
-    //generate LFSR_8bit block
+    //generate LFSR_DOWNbit block
     
     
-    
-module LFSR_8BITS ( PRNG, SEED, clk);
+    module LFSR_8BITS ( PRNG, SEED, clk);
     
     //LFSR bits are assigned during the erb compiling process
     parameter   REG_BITS    = 8 ;
-    parameter   INIT        = 2'h11 ; 
+    parameter   INIT        = 8'h0F ; 
     
     //read interface for the verilog
     input wire [REG_BITS-1:0]   SEED ;
@@ -189,7 +197,11 @@ module LFSR_8BITS ( PRNG, SEED, clk);
 
     initial begin
         //initialization
-        PRNG <= INIT ;
+        PRNG = INIT ;
+        `ifdef DEBUG
+            $display("INIT values : %b \n " , INIT ) ;
+            $display("PRNG values : %b \n " , PRNG ) ;
+        `endif
     end
 
     always @(posedge clk) begin
@@ -247,6 +259,9 @@ module LFSR_8BITS ( PRNG, SEED, clk);
         ;
     end
 endmodule
+
+
+
 
 
 
