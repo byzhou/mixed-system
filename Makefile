@@ -8,11 +8,11 @@ includedir  := #$(srcdir)
 makegen_tcl := generated_vars.tcl
 readin_tcl  := t_.tcl
 wave_tcl	:= readWaveforms.tcl
-tcl_files	:= $(readin_tcl) $(wave_tcl) $(makegen_tcl)
+tcl_files	:= $(tcldir)/$(readin_tcl) $(tcldir)/$(wave_tcl) 
 
 #src files
 #erbfiles	:= $(shell ls $(srcdir)/*.erb.v)
-erbfiles	:= t_LFSR.erb.v
+erbfiles	:= $(srcdir)/t_LFSR.erb.v
 srcfiles	:= $(erbfiles:%.erb.v=%.v) 
 
 #simulate rules
@@ -38,12 +38,13 @@ vpath %.erb.v $(srcdir)
 $(srcdir)/%.v:%.erb.v
 	erb $< > $@
 
-all: $(srcfiles) 
+all: prep 
 	
-prep: 
-	cp $(tcldir)/$(tcl_files) $(build_dir)/\
-	cp $(srcdir)/*.v ../$(build_dir)/\
-	echo '$(vsim_vars)' > $(build_dir)/$(makegen_tcl)\
+prep: $(srcfiles)
+	pwd;\
+	cp $(tcl_files) $(build_dir)/;\
+	cp $(srcdir)/*.v $(build_dir)/;\
+	echo '$(vsim_vars)' > $(build_dir)/$(makegen_tcl);\
 	echo -e "*\n!.gitignore" > $(build_dir)/.gitignore
 
 vsim:prep
