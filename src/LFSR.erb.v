@@ -1,11 +1,10 @@
 
-model LFSR_<%= LFSR_BITS %>BITS ( PRNG, INIT, SEED, clk);
+model LFSR_<%= LFSR_BITS %>BITS ( PRNG, SEED, clk);
 
     parameter   REG_BITS    = <%= LFSR_BITS %> ;
-    parameter   INIT        = <%= LFSR_BITS %>'b0 ; 
+    parameter   INIT        = <%= LFSR_INIT %> ; 
 
     input wire [REG_BITS-1:0]   SEED ;
-    input wire [REG_BITS-1:0]   INIT ;
     input wire                  clk ;
     output reg [REG_BITS-1:0]   PRNG ;
 

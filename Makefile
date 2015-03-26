@@ -2,7 +2,7 @@
 basedir		:= .
 srcdir		:= src
 tcldir		:= config
-includedir  := $(srcdir)
+includedir  := #$(srcdir)
 
 #tcl files
 makegen_tcl := generated_vars.tcl
@@ -11,7 +11,8 @@ wave_tcl	:= readWaveforms.tcl
 tcl_files	:= $(readin_tcl) $(wave_tcl) $(makegen_tcl)
 
 #src files
-erbfiles	:= $(shell ls $(srcdir)/*.erb.v)
+#erbfiles	:= $(shell ls $(srcdir)/*.erb.v)
+erbfiles	:= t_LFSR.erb.v
 srcfiles	:= $(erbfiles:%.erb.v=%.v) 
 
 #simulate rules
