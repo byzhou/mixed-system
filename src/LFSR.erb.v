@@ -25,9 +25,10 @@ module LFSR_<%= LFSR_BITS %>BITS ( PRNG, SEED, clk);
         <% (0..LFSR_BITS - 1).each do |addr| %> 
             PRNG[<%= addr %>] ^
         <% end %>
-        <% (0..LFSR_BITS - 1).each do |addr| %> 
+        <% (0..LFSR_BITS - 2).each do |addr| %> 
             SEED[<%= addr %>] ^
         <% end %>
+            SEED[<%= LFSR_BITS - 1 %>]
         ;
     end
 endmodule

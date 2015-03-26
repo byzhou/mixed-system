@@ -48,7 +48,7 @@ endmodule
     
     
     
-model LFSR_16BITS ( PRNG, SEED, clk);
+module LFSR_16BITS ( PRNG, SEED, clk);
     
     //LFSR bits are assigned during the erb compiling process
     parameter   REG_BITS    = 16 ;
@@ -162,9 +162,8 @@ model LFSR_16BITS ( PRNG, SEED, clk);
             SEED[13] ^
          
             SEED[14] ^
-         
-            SEED[15] ^
         
+            SEED[15]
         ;
     end
 endmodule
@@ -177,7 +176,7 @@ endmodule
     
     
     
-model LFSR_8BITS ( PRNG, SEED, clk);
+module LFSR_8BITS ( PRNG, SEED, clk);
     
     //LFSR bits are assigned during the erb compiling process
     parameter   REG_BITS    = 8 ;
@@ -243,9 +242,8 @@ model LFSR_8BITS ( PRNG, SEED, clk);
             SEED[5] ^
          
             SEED[6] ^
-         
-            SEED[7] ^
         
+            SEED[7]
         ;
     end
 endmodule

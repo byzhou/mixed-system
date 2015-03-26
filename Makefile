@@ -17,8 +17,6 @@ modulefiles := $(shell ls -d $(srcdir)/* | grep "\.erb\.v" | grep -v "t_" )
 testBench   := $(shell ls -d $(srcdir)/* | grep "\.erb\.v" | grep "t_" )
 #testbench after erb
 vTestBench	:= $(shell ls -d $(srcdir)/* | grep "t_" | grep -v "\.erb" )
-erbfiles	:= $(srcdir)/t_LFSR.erb.v
-srcfiles	:= $(erbfiles:%.erb.v=%.v) 
 
 #simulate rules
 #################################################################
@@ -38,21 +36,18 @@ vsim_vars	:= \
 
 .PHONY: prep vsim view clean all default
 
-#search all the .erb.v files and erb them
-#vpath %.erb.v $(srcdir)
-
-#erb rules
-$(srcdir)\/%.v:%.erb.v
-	erb $< > $@
-
 all:vsim
 
 #verilog rules
-$(srcfiles):$(testBench)
+$(testBench):
+	erb $(srcdir)/$(toplevel).erb.v > $(srcdir)/$(toplevel).v
+
+$(vTestBench): $(testBench) 
+
 $(testBench):$(modulefiles)
 
 #generate the build directory
-$(build_dir): $(srcfiles)
+$(build_dir): $(vTestBench)
 	mkdir $(build_dir);\
 	echo -e "*\n!.gitignore" > $(build_dir)/.gitignore
 
