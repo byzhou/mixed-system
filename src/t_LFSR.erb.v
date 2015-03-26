@@ -4,6 +4,7 @@ module t_LFSR () ;
   
     reg clk; 
 
+    //populate 16 bit LFSR, which makes up the upper layer of the PRNG
     <% LFSR_BITS = 16 %>
     <% LFSR_INIT = "4h'1111" %>
     wire [<%= LFSR_BITS - 1 %> : 0]     O_LFSR_UP ;
@@ -14,6 +15,7 @@ module t_LFSR () ;
         .PRNG(O_LFSR_UP>)
     );
 
+    //populate 8 bit LFSR, which makes up the lower layer of the PRNG
     <% LFSR_BITS = 8 %>
     <% LFSR_INIT = "2h'11" %>
     wire [<%= LFSR_BITS - 1 %> : 0]     O_LFSR_DOWN ;
@@ -26,6 +28,7 @@ module t_LFSR () ;
 
     wire [<%= LFSR_BITS - 1 %> : 0]     O_LFSR ;
 
+    //combine the two LFSR to generate a longer period
     assign O_LFSR = O_LFSR_UP[<%= LFSR_BITS - 1 %> : 0] ^ O_LFSR_DOWN ;
 
     initial begin
