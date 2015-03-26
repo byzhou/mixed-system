@@ -37,7 +37,7 @@ module t_LFSR () ;
         clk         <= 0 ;
         SEED_UP     <= <%= LFSR_BITS_UP %>'h5;
         SEED_DOWN   <= <%= LFSR_BITS_DOWN %>'he;
-        #100 $finish;
+        #10000 $finish;
     end
 
     always begin

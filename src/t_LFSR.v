@@ -37,7 +37,7 @@ module t_LFSR () ;
         clk         <= 0 ;
         SEED_UP     <= 16'h5;
         SEED_DOWN   <= 8'he;
-        #100 $finish;
+        #10000 $finish;
     end
 
     always begin
