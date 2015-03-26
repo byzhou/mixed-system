@@ -1,5 +1,3 @@
-default: all
-
 #build dir org
 basedir		:= .
 srcdir		:= src
@@ -11,6 +9,10 @@ makegen_tcl := generated_vars.tcl
 readin_tcl  := t_.tcl
 wave_tcl	:= readWaveforms.tcl
 tcl_files	:= $(readin_tcl) $(wave_tcl) $(makegen_tcl)
+
+#src files
+erbfiles	:= $(shell ls $(srcdir)/*.erb.v)
+srcfiles	:= $(erbfiles:%.erb.v=%.v) 
 
 #simulate rules
 #################################################################
@@ -28,15 +30,18 @@ vsim_vars	:= \
 	set RUNTIME $(runtime); \
 	set MAKEGEN $(makegen_tcl); \
 
-all: vsim
+.PHONY: prep vsim view clean all default
 
-prep:
-	cd $(tcldir)/ \
-	cp $(tcl_files) ../$(build_dir)/\
-	cd -\
-	cd $(srcdir)/\
-	cp *.v ../$(build_dir)/\
-	cd -\
+vpath %.erb.v $(srcdir)
+
+$(srcdir)/%.v:%.erb.v
+	erb $< > $@
+
+all: $(srcfiles) 
+	
+prep: 
+	cp $(tcldir)/$(tcl_files) $(build_dir)/\
+	cp $(srcdir)/*.v ../$(build_dir)/\
 	echo '$(vsim_vars)' > $(build_dir)/$(makegen_tcl)\
 	echo -e "*\n!.gitignore" > $(build_dir)/.gitignore
 
