@@ -14,25 +14,15 @@ module CONF_<%= CONF_BITS %>BITS ( INVU_NCONF, INVU_PCONF, INVD_NCONF, INVD_PCON
     initial begin
         //suppose the init bits can only be all fs or all 0s
         //INIT_BITS_X represents all xs
-        INVU_NCONF <= <%= INIT_BITS_F %> ;
-        INVU_PCONF <= <%= INIT_BITS_F %> ;
-        INVD_NCONF <= <%= INIT_BITS_O %> ;
-        INVD_PCONF <= <%= INIT_BITS_O %> ;
+        INVU_NCONF <= <%= INIT_BITS_O %> ;
+        INVU_PCONF <= <%= INIT_BITS_O %> ;
+        INVD_NCONF <= <%= INIT_BITS_F %> ;
+        INVD_PCONF <= <%= INIT_BITS_F %> ;
     end
 
     always @(posedge CLK) begin
         casez ({O_INVU,O_INVD,INVU_PCONF,INVU_NCONF,INVD_PCONF,INVD_NCONF})
             {2'b10,<%= INIT_BITS_O %>,<%= INIT_BITS_O %>,<%= INIT_BITS_F %>,<%= INIT_BITS_F %>}:begin
-                `ifdef DEBUG
-                    $display ( "case 2\n" ) ;
-                `endif
-                    //do nothing;
-                    INVU_PCONF <= INVU_PCONF ;
-                    INVU_NCONF <= INVU_NCONF ;
-                    INVD_PCONF <= INVD_PCONF ;
-                    INVD_NCONF <= INVD_NCONF ;
-                end
-            {2'b01,<%= INIT_BITS_F %>,<%= INIT_BITS_F %>,<%= INIT_BITS_O %>,<%= INIT_BITS_O %>}:begin
                 `ifdef DEBUG
                     $display ( "case 1\n" ) ;
                 `endif
@@ -42,13 +32,23 @@ module CONF_<%= CONF_BITS %>BITS ( INVU_NCONF, INVU_PCONF, INVD_NCONF, INVD_PCON
                     INVD_PCONF <= INVD_PCONF ;
                     INVD_NCONF <= INVD_NCONF ;
                 end
-            {2'b10,<%= INIT_BITS_O %>,<%= INIT_BITS_X %>,<%= INIT_BITS_F %>,<%= INIT_BITS_X %>}:begin
+            {2'b01,<%= INIT_BITS_F %>,<%= INIT_BITS_F %>,<%= INIT_BITS_O %>,<%= INIT_BITS_O %>}:begin
+                `ifdef DEBUG
+                    $display ( "case 2\n" ) ;
+                `endif
+                    //do nothing;
+                    INVU_PCONF <= INVU_PCONF ;
+                    INVU_NCONF <= INVU_NCONF ;
+                    INVD_PCONF <= INVD_PCONF ;
+                    INVD_NCONF <= INVD_NCONF ;
+                end
+            {2'b10,<%= INIT_BITS_X %>,<%= INIT_BITS_O %>,<%= INIT_BITS_X %>,<%= INIT_BITS_F %>}:begin
                 `ifdef DEBUG
                     $display ( "case 3\n" ) ;
                 `endif
                     //config PMOS 
                     INVU_PCONF <= INVU_PCONF - 1 ;
-                    INVD_PCONF <= INVU_PCONF + 1 ;
+                    INVD_PCONF <= INVD_PCONF + 1 ;
                 end
             {2'b01,<%= INIT_BITS_X %>,<%= INIT_BITS_F %>,<%= INIT_BITS_X %>,<%= INIT_BITS_O %>}:begin
                 `ifdef DEBUG
@@ -56,7 +56,7 @@ module CONF_<%= CONF_BITS %>BITS ( INVU_NCONF, INVU_PCONF, INVD_NCONF, INVD_PCON
                 `endif
                     //config PMOS 
                     INVU_PCONF <= INVU_PCONF + 1 ;
-                    INVD_PCONF <= INVU_PCONF - 1 ;
+                    INVD_PCONF <= INVD_PCONF - 1 ;
                 end
             {2'b10,<%= INIT_BITS_X %>,<%= INIT_BITS_X %>,<%= INIT_BITS_X %>,<%= INIT_BITS_X %>}:begin
                 `ifdef DEBUG
@@ -64,7 +64,7 @@ module CONF_<%= CONF_BITS %>BITS ( INVU_NCONF, INVU_PCONF, INVD_NCONF, INVD_PCON
                 `endif
                     //config NMOS
                     INVU_NCONF <= INVU_NCONF - 1 ;
-                    INVD_NCONF <= INVU_NCONF + 1 ;
+                    INVD_NCONF <= INVD_NCONF + 1 ;
                 end
             {2'b01,<%= INIT_BITS_X %>,<%= INIT_BITS_X %>,<%= INIT_BITS_X %>,<%= INIT_BITS_X %>}:begin
                 `ifdef DEBUG
@@ -72,10 +72,14 @@ module CONF_<%= CONF_BITS %>BITS ( INVU_NCONF, INVU_PCONF, INVD_NCONF, INVD_PCON
                 `endif
                     //config NMOS 
                     INVU_NCONF <= INVU_NCONF + 1 ;
-                    INVD_NCONF <= INVU_NCONF - 1 ;
+                    INVD_NCONF <= INVD_NCONF - 1 ;
                 end
-            default: $display ( "error, %b, %h \n" , {O_INVU, O_INVD}, 
-                        {INVU_PCONF,INVU_NCONF,INVD_PCONF,INVD_NCONF} ) ;
+            default: begin
+                `ifdef DEBUG
+                    $display ( "error, %b, %h \n" , {O_INVU, O_INVD}, 
+                            {INVU_PCONF,INVU_NCONF,INVD_PCONF,INVD_NCONF} ) ;
+                `endif
+                end
         endcase
     end
 

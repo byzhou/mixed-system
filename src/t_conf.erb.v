@@ -22,14 +22,14 @@ module t_conf () ;
 
     initial begin
             CLK <= 0 ;
-            {O_INVU,O_INVD} <= 2'b10;
-        #1000
             {O_INVU,O_INVD} <= 2'b01;
+        #10000
+            {O_INVU,O_INVD} <= 2'b10;
     end
 
     always begin
         #5 CLK <= ~CLK ;
-        $display ( "UP %h, UN %h, DP %h, DP %h \n",
+        $display ( "UP %h, UN %h, DP %h, DN %h \n",
                 INVU_PCONF, INVU_NCONF, 
                 INVD_PCONF, INVD_NCONF 
                 ) ;

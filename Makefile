@@ -21,7 +21,7 @@ vTestBench	:= $(shell ls -d $(srcdir)/* | grep "t_" | grep -v "\.erb" )
 #simulate rules
 #################################################################
 toplevel 	:= t_conf
-runtime		:= 10000ns
+runtime		:= 20000ns
 #################################################################
 
 # define build directory
