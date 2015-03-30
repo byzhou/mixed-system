@@ -2,14 +2,14 @@
 module CONF_<%= CONF_BITS %>BITS ( INVU_NCONF, INVU_PCONF, INVD_NCONF, INVD_PCONF, O_INVU, O_INVD, CLK) ;
     //The start of this code needs four variables
     //CONF_BITS INIT_BITS_F INIT_BITS_O INIT_BITS_X
-    input wire [<%= CONF_BITS - 1%>:0]      O_INVU ;
-    input wire [<%= CONF_BITS - 1%>:0]      O_INVD ;
-    input wire                              CLK ;
+    input wire                               O_INVU ;
+    input wire                               O_INVD ;
+    input wire                               CLK ;
 
-    output reg [<%= CONF_BITS - 1%>:0]      INVU_NCONF ;
-    output reg [<%= CONF_BITS - 1%>:0]      INVU_PCONF ;
-    output reg [<%= CONF_BITS - 1%>:0]      INVD_NCONF ;
-    output reg [<%= CONF_BITS - 1%>:0]      INVD_PCONF ;
+    output reg [<%= CONF_BITS - 1 %>:0]      INVU_NCONF ;
+    output reg [<%= CONF_BITS - 1 %>:0]      INVU_PCONF ;
+    output reg [<%= CONF_BITS - 1 %>:0]      INVD_NCONF ;
+    output reg [<%= CONF_BITS - 1 %>:0]      INVD_PCONF ;
 
     initial begin
         //suppose the init bits can only be all fs or all 0s
@@ -24,17 +24,17 @@ module CONF_<%= CONF_BITS %>BITS ( INVU_NCONF, INVU_PCONF, INVD_NCONF, INVD_PCON
         case ({O_INVU,O_INVD,INVU_PCONF,INVU_NCONF,INVD_PCONF,INVD_NCONF})
             {2'b01,<%= INIT_BITS_F %>,<%= INIT_BITS_F %>,<%= INIT_BITS_O %>,<%= INIT_BITS_O %>}:begin
                     //do nothing;
-                    INVU_PCONF => INVU_PCONF ;
-                    INVU_NCONF => INVU_NCONF ;
-                    INVD_PCONF => INVD_PCONF ;
-                    INVD_NCONF => INVD_NCONF ;
+                    INVU_PCONF <= INVU_PCONF ;
+                    INVU_NCONF <= INVU_NCONF ;
+                    INVD_PCONF <= INVD_PCONF ;
+                    INVD_NCONF <= INVD_NCONF ;
                 end
             {2'b10,<%= INIT_BITS_O %>,<%= INIT_BITS_O %>,<%= INIT_BITS_F %>,<%= INIT_BITS_F %>}:begin
                     //do nothing;
-                    INVU_PCONF => INVU_PCONF ;
-                    INVU_NCONF => INVU_NCONF ;
-                    INVD_PCONF => INVD_PCONF ;
-                    INVD_NCONF => INVD_NCONF ;
+                    INVU_PCONF <= INVU_PCONF ;
+                    INVU_NCONF <= INVU_NCONF ;
+                    INVD_PCONF <= INVD_PCONF ;
+                    INVD_NCONF <= INVD_NCONF ;
                 end
             {2'b10,<%= INIT_BITS_O %>,<%= INIT_BITS_X %>,<%= INIT_BITS_F %>,<%= INIT_BITS_X %>}:begin
                     //config PMOS 

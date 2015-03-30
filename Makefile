@@ -20,8 +20,8 @@ vTestBench	:= $(shell ls -d $(srcdir)/* | grep "t_" | grep -v "\.erb" )
 
 #simulate rules
 #################################################################
-toplevel 	:= t_LFSR
-runtime		:= 10000ns
+toplevel 	:= t_conf
+runtime		:= 100ns
 #################################################################
 
 # define build directory
@@ -63,7 +63,10 @@ prep: | $(build_dir)
 vsim:prep
 	cd $(build_dir); \
 	vsim -c -do $(readin_tcl) ; \
-	cd .. ; 
+	cd - ; \
+	export PATH=/ad/eng/research/eng_research_icsg/mixed/bobzhou/software/tools/bin:$PATH;\
+	echo -e "\n";\
+	figlet -f basic -c sim success
 
 #view waveforms
 view:vsim
