@@ -1,0 +1,6062 @@
+erb src/t_conf.erb.v > src/t_conf.v
+erb src/t_conf.erb.v > src/t_conf.v
+erb src/t_conf.erb.v > src/t_conf.v
+mkdir build;\
+	echo -e "*\n!.gitignore" > build/.gitignore
+cp config/t_.tcl config/readWaveforms.tcl  build/;\
+	cp src/t_conf.v src/t_LFSR.v build/;\
+	echo 'set INCLUDE_DIR src; set TOP	t_conf.v; set TOPLEVEL t_conf; set RUNTIME 10000ns; set MAKEGEN generated_vars.tcl; ' > build/generated_vars.tcl;\
+	echo -e "*\n!.gitignore" > build/.gitignore
+cd build; \
+	vsim -c -do t_.tcl ; \
+	cd - ; \
+	export PATH=/ad/eng/research/eng_research_icsg/mixed/bobzhou/software/tools/bin:ATH;\
+	echo -e "\n";\
+	figlet -f basic -c sim success
+Reading /mnt/support/software/linux/all/vlsi/mentor/modelsim-6.6b/modeltech/tcl/vsim/pref.tcl 
+
+# 6.6b
+
+# do t_.tcl 
+# ** Warning: (vlib-34) Library already exists at "work".
+# generated_vars.tcl
+# /ad/eng/research/eng_research_icsg/bobzhou/2015_spring/ICCAD/dig/build
+# Model Technology ModelSim SE vlog 6.6b Compiler 2010.05 May 21 2010
+# -- Compiling module t_conf
+# -- Compiling module CONF_4BITS
+# 
+# Top level modules:
+# 	t_conf
+# vsim -voptargs=+acc work.t_conf 
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# //  ModelSim SE 6.6b May 21 2010 Linux 2.6.32-358.14.1.el6.x86_64
+# //
+# //  Copyright 1991-2010 Mentor Graphics Corporation
+# //              All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND 
+# //  PROPRIETARY INFORMATION WHICH IS THE PROPERTY
+# //  OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
+# //  AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading work.t_conf(fast)
+# Loading work.CONF_4BITS(fast)
+# UP f, UN f, DP 0, DP 0 
+# 
+# case 5
+# 
+# UP f, UN e, DP 0, DP 0 
+# 
+# UP f, UN e, DP 0, DP 0 
+# 
+# case 5
+# 
+# UP f, UN d, DP 0, DP f 
+# 
+# UP f, UN d, DP 0, DP f 
+# 
+# case 5
+# 
+# UP f, UN c, DP 0, DP e 
+# 
+# UP f, UN c, DP 0, DP e 
+# 
+# case 5
+# 
+# UP f, UN b, DP 0, DP d 
+# 
+# UP f, UN b, DP 0, DP d 
+# 
+# case 5
+# 
+# UP f, UN a, DP 0, DP c 
+# 
+# UP f, UN a, DP 0, DP c 
+# 
+# case 5
+# 
+# UP f, UN 9, DP 0, DP b 
+# 
+# UP f, UN 9, DP 0, DP b 
+# 
+# case 5
+# 
+# UP f, UN 8, DP 0, DP a 
+# 
+# UP f, UN 8, DP 0, DP a 
+# 
+# case 5
+# 
+# UP f, UN 7, DP 0, DP 9 
+# 
+# UP f, UN 7, DP 0, DP 9 
+# 
+# case 5
+# 
+# UP f, UN 6, DP 0, DP 8 
+# 
+# UP f, UN 6, DP 0, DP 8 
+# 
+# case 5
+# 
+# UP f, UN 5, DP 0, DP 7 
+# 
+# UP f, UN 5, DP 0, DP 7 
+# 
+# case 5
+# 
+# UP f, UN 4, DP 0, DP 6 
+# 
+# UP f, UN 4, DP 0, DP 6 
+# 
+# case 5
+# 
+# UP f, UN 3, DP 0, DP 5 
+# 
+# UP f, UN 3, DP 0, DP 5 
+# 
+# case 5
+# 
+# UP f, UN 2, DP 0, DP 4 
+# 
+# UP f, UN 2, DP 0, DP 4 
+# 
+# case 5
+# 
+# UP f, UN 1, DP 0, DP 3 
+# 
+# UP f, UN 1, DP 0, DP 3 
+# 
+# case 5
+# 
+# UP f, UN 0, DP 0, DP 2 
+# 
+# UP f, UN 0, DP 0, DP 2 
+# 
+# case 5
+# 
+# UP f, UN f, DP 0, DP 1 
+# 
+# UP f, UN f, DP 0, DP 1 
+# 
+# case 5
+# 
+# UP f, UN e, DP 0, DP 0 
+# 
+# UP f, UN e, DP 0, DP 0 
+# 
+# case 5
+# 
+# UP f, UN d, DP 0, DP f 
+# 
+# UP f, UN d, DP 0, DP f 
+# 
+# case 5
+# 
+# UP f, UN c, DP 0, DP e 
+# 
+# UP f, UN c, DP 0, DP e 
+# 
+# case 5
+# 
+# UP f, UN b, DP 0, DP d 
+# 
+# UP f, UN b, DP 0, DP d 
+# 
+# case 5
+# 
+# UP f, UN a, DP 0, DP c 
+# 
+# UP f, UN a, DP 0, DP c 
+# 
+# case 5
+# 
+# UP f, UN 9, DP 0, DP b 
+# 
+# UP f, UN 9, DP 0, DP b 
+# 
+# case 5
+# 
+# UP f, UN 8, DP 0, DP a 
+# 
+# UP f, UN 8, DP 0, DP a 
+# 
+# case 5
+# 
+# UP f, UN 7, DP 0, DP 9 
+# 
+# UP f, UN 7, DP 0, DP 9 
+# 
+# case 5
+# 
+# UP f, UN 6, DP 0, DP 8 
+# 
+# UP f, UN 6, DP 0, DP 8 
+# 
+# case 5
+# 
+# UP f, UN 5, DP 0, DP 7 
+# 
+# UP f, UN 5, DP 0, DP 7 
+# 
+# case 5
+# 
+# UP f, UN 4, DP 0, DP 6 
+# 
+# UP f, UN 4, DP 0, DP 6 
+# 
+# case 5
+# 
+# UP f, UN 3, DP 0, DP 5 
+# 
+# UP f, UN 3, DP 0, DP 5 
+# 
+# case 5
+# 
+# UP f, UN 2, DP 0, DP 4 
+# 
+# UP f, UN 2, DP 0, DP 4 
+# 
+# case 5
+# 
+# UP f, UN 1, DP 0, DP 3 
+# 
+# UP f, UN 1, DP 0, DP 3 
+# 
+# case 5
+# 
+# UP f, UN 0, DP 0, DP 2 
+# 
+# UP f, UN 0, DP 0, DP 2 
+# 
+# case 5
+# 
+# UP f, UN f, DP 0, DP 1 
+# 
+# UP f, UN f, DP 0, DP 1 
+# 
+# case 5
+# 
+# UP f, UN e, DP 0, DP 0 
+# 
+# UP f, UN e, DP 0, DP 0 
+# 
+# case 5
+# 
+# UP f, UN d, DP 0, DP f 
+# 
+# UP f, UN d, DP 0, DP f 
+# 
+# case 5
+# 
+# UP f, UN c, DP 0, DP e 
+# 
+# UP f, UN c, DP 0, DP e 
+# 
+# case 5
+# 
+# UP f, UN b, DP 0, DP d 
+# 
+# UP f, UN b, DP 0, DP d 
+# 
+# case 5
+# 
+# UP f, UN a, DP 0, DP c 
+# 
+# UP f, UN a, DP 0, DP c 
+# 
+# case 5
+# 
+# UP f, UN 9, DP 0, DP b 
+# 
+# UP f, UN 9, DP 0, DP b 
+# 
+# case 5
+# 
+# UP f, UN 8, DP 0, DP a 
+# 
+# UP f, UN 8, DP 0, DP a 
+# 
+# case 5
+# 
+# UP f, UN 7, DP 0, DP 9 
+# 
+# UP f, UN 7, DP 0, DP 9 
+# 
+# case 5
+# 
+# UP f, UN 6, DP 0, DP 8 
+# 
+# UP f, UN 6, DP 0, DP 8 
+# 
+# case 5
+# 
+# UP f, UN 5, DP 0, DP 7 
+# 
+# UP f, UN 5, DP 0, DP 7 
+# 
+# case 5
+# 
+# UP f, UN 4, DP 0, DP 6 
+# 
+# UP f, UN 4, DP 0, DP 6 
+# 
+# case 5
+# 
+# UP f, UN 3, DP 0, DP 5 
+# 
+# UP f, UN 3, DP 0, DP 5 
+# 
+# case 5
+# 
+# UP f, UN 2, DP 0, DP 4 
+# 
+# UP f, UN 2, DP 0, DP 4 
+# 
+# case 5
+# 
+# UP f, UN 1, DP 0, DP 3 
+# 
+# UP f, UN 1, DP 0, DP 3 
+# 
+# case 5
+# 
+# UP f, UN 0, DP 0, DP 2 
+# 
+# UP f, UN 0, DP 0, DP 2 
+# 
+# case 5
+# 
+# UP f, UN f, DP 0, DP 1 
+# 
+# UP f, UN f, DP 0, DP 1 
+# 
+# case 5
+# 
+# UP f, UN e, DP 0, DP 0 
+# 
+# UP f, UN e, DP 0, DP 0 
+# 
+# case 5
+# 
+# UP f, UN d, DP 0, DP f 
+# 
+# UP f, UN d, DP 0, DP f 
+# 
+# case 5
+# 
+# UP f, UN c, DP 0, DP e 
+# 
+# UP f, UN c, DP 0, DP e 
+# 
+# case 5
+# 
+# UP f, UN b, DP 0, DP d 
+# 
+# UP f, UN b, DP 0, DP d 
+# 
+# case 5
+# 
+# UP f, UN a, DP 0, DP c 
+# 
+# UP f, UN a, DP 0, DP c 
+# 
+# case 5
+# 
+# UP f, UN 9, DP 0, DP b 
+# 
+# UP f, UN 9, DP 0, DP b 
+# 
+# case 5
+# 
+# UP f, UN 8, DP 0, DP a 
+# 
+# UP f, UN 8, DP 0, DP a 
+# 
+# case 5
+# 
+# UP f, UN 7, DP 0, DP 9 
+# 
+# UP f, UN 7, DP 0, DP 9 
+# 
+# case 5
+# 
+# UP f, UN 6, DP 0, DP 8 
+# 
+# UP f, UN 6, DP 0, DP 8 
+# 
+# case 5
+# 
+# UP f, UN 5, DP 0, DP 7 
+# 
+# UP f, UN 5, DP 0, DP 7 
+# 
+# case 5
+# 
+# UP f, UN 4, DP 0, DP 6 
+# 
+# UP f, UN 4, DP 0, DP 6 
+# 
+# case 5
+# 
+# UP f, UN 3, DP 0, DP 5 
+# 
+# UP f, UN 3, DP 0, DP 5 
+# 
+# case 5
+# 
+# UP f, UN 2, DP 0, DP 4 
+# 
+# UP f, UN 2, DP 0, DP 4 
+# 
+# case 5
+# 
+# UP f, UN 1, DP 0, DP 3 
+# 
+# UP f, UN 1, DP 0, DP 3 
+# 
+# case 5
+# 
+# UP f, UN 0, DP 0, DP 2 
+# 
+# UP f, UN 0, DP 0, DP 2 
+# 
+# case 5
+# 
+# UP f, UN f, DP 0, DP 1 
+# 
+# UP f, UN f, DP 0, DP 1 
+# 
+# case 5
+# 
+# UP f, UN e, DP 0, DP 0 
+# 
+# UP f, UN e, DP 0, DP 0 
+# 
+# case 5
+# 
+# UP f, UN d, DP 0, DP f 
+# 
+# UP f, UN d, DP 0, DP f 
+# 
+# case 5
+# 
+# UP f, UN c, DP 0, DP e 
+# 
+# UP f, UN c, DP 0, DP e 
+# 
+# case 5
+# 
+# UP f, UN b, DP 0, DP d 
+# 
+# UP f, UN b, DP 0, DP d 
+# 
+# case 5
+# 
+# UP f, UN a, DP 0, DP c 
+# 
+# UP f, UN a, DP 0, DP c 
+# 
+# case 5
+# 
+# UP f, UN 9, DP 0, DP b 
+# 
+# UP f, UN 9, DP 0, DP b 
+# 
+# case 5
+# 
+# UP f, UN 8, DP 0, DP a 
+# 
+# UP f, UN 8, DP 0, DP a 
+# 
+# case 5
+# 
+# UP f, UN 7, DP 0, DP 9 
+# 
+# UP f, UN 7, DP 0, DP 9 
+# 
+# case 5
+# 
+# UP f, UN 6, DP 0, DP 8 
+# 
+# UP f, UN 6, DP 0, DP 8 
+# 
+# case 5
+# 
+# UP f, UN 5, DP 0, DP 7 
+# 
+# UP f, UN 5, DP 0, DP 7 
+# 
+# case 5
+# 
+# UP f, UN 4, DP 0, DP 6 
+# 
+# UP f, UN 4, DP 0, DP 6 
+# 
+# case 5
+# 
+# UP f, UN 3, DP 0, DP 5 
+# 
+# UP f, UN 3, DP 0, DP 5 
+# 
+# case 5
+# 
+# UP f, UN 2, DP 0, DP 4 
+# 
+# UP f, UN 2, DP 0, DP 4 
+# 
+# case 5
+# 
+# UP f, UN 1, DP 0, DP 3 
+# 
+# UP f, UN 1, DP 0, DP 3 
+# 
+# case 5
+# 
+# UP f, UN 0, DP 0, DP 2 
+# 
+# UP f, UN 0, DP 0, DP 2 
+# 
+# case 5
+# 
+# UP f, UN f, DP 0, DP 1 
+# 
+# UP f, UN f, DP 0, DP 1 
+# 
+# case 5
+# 
+# UP f, UN e, DP 0, DP 0 
+# 
+# UP f, UN e, DP 0, DP 0 
+# 
+# case 5
+# 
+# UP f, UN d, DP 0, DP f 
+# 
+# UP f, UN d, DP 0, DP f 
+# 
+# case 5
+# 
+# UP f, UN c, DP 0, DP e 
+# 
+# UP f, UN c, DP 0, DP e 
+# 
+# case 5
+# 
+# UP f, UN b, DP 0, DP d 
+# 
+# UP f, UN b, DP 0, DP d 
+# 
+# case 5
+# 
+# UP f, UN a, DP 0, DP c 
+# 
+# UP f, UN a, DP 0, DP c 
+# 
+# case 5
+# 
+# UP f, UN 9, DP 0, DP b 
+# 
+# UP f, UN 9, DP 0, DP b 
+# 
+# case 5
+# 
+# UP f, UN 8, DP 0, DP a 
+# 
+# UP f, UN 8, DP 0, DP a 
+# 
+# case 5
+# 
+# UP f, UN 7, DP 0, DP 9 
+# 
+# UP f, UN 7, DP 0, DP 9 
+# 
+# case 5
+# 
+# UP f, UN 6, DP 0, DP 8 
+# 
+# UP f, UN 6, DP 0, DP 8 
+# 
+# case 5
+# 
+# UP f, UN 5, DP 0, DP 7 
+# 
+# UP f, UN 5, DP 0, DP 7 
+# 
+# case 5
+# 
+# UP f, UN 4, DP 0, DP 6 
+# 
+# UP f, UN 4, DP 0, DP 6 
+# 
+# case 5
+# 
+# UP f, UN 3, DP 0, DP 5 
+# 
+# UP f, UN 3, DP 0, DP 5 
+# 
+# case 5
+# 
+# UP f, UN 2, DP 0, DP 4 
+# 
+# UP f, UN 2, DP 0, DP 4 
+# 
+# case 5
+# 
+# UP f, UN 1, DP 0, DP 3 
+# 
+# UP f, UN 1, DP 0, DP 3 
+# 
+# case 5
+# 
+# UP f, UN 0, DP 0, DP 2 
+# 
+# UP f, UN 0, DP 0, DP 2 
+# 
+# case 5
+# 
+# UP f, UN f, DP 0, DP 1 
+# 
+# UP f, UN f, DP 0, DP 1 
+# 
+# case 5
+# 
+# UP f, UN e, DP 0, DP 0 
+# 
+# UP f, UN e, DP 0, DP 0 
+# 
+# case 5
+# 
+# UP f, UN d, DP 0, DP f 
+# 
+# UP f, UN d, DP 0, DP f 
+# 
+# case 5
+# 
+# UP f, UN c, DP 0, DP e 
+# 
+# UP f, UN c, DP 0, DP e 
+# 
+# case 5
+# 
+# UP f, UN b, DP 0, DP d 
+# 
+# UP f, UN b, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+# case 6
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# UP f, UN 0, DP 0, DP e 
+# 
+# case 6
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# UP f, UN 1, DP 0, DP f 
+# 
+# case 6
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# UP f, UN 2, DP 0, DP 0 
+# 
+# case 6
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# UP f, UN 3, DP 0, DP 1 
+# 
+# case 6
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# UP f, UN 4, DP 0, DP 2 
+# 
+# case 6
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# UP f, UN 5, DP 0, DP 3 
+# 
+# case 6
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# UP f, UN 6, DP 0, DP 4 
+# 
+# case 6
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# UP f, UN 7, DP 0, DP 5 
+# 
+# case 6
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# UP f, UN 8, DP 0, DP 6 
+# 
+# case 6
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# UP f, UN 9, DP 0, DP 7 
+# 
+# case 6
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# UP f, UN a, DP 0, DP 8 
+# 
+# case 6
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# UP f, UN b, DP 0, DP 9 
+# 
+# case 6
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# UP f, UN c, DP 0, DP a 
+# 
+# case 6
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# UP f, UN d, DP 0, DP b 
+# 
+# case 6
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# UP f, UN e, DP 0, DP c 
+# 
+# case 6
+# 
+# UP f, UN f, DP 0, DP d 
+# 
+/ad/eng/research/eng_research_icsg/bobzhou/2015_spring/ICCAD/dig
+
+
+                          .d8888. d888888b .88b  d88. 
+                          88'  YP   `88'   88'YbdP`88 
+                          `8bo.      88    88  88  88 
+                            `Y8b.    88    88  88  88 
+                          db   8D   .88.   88  88  88 
+                          `8888Y' Y888888P YP  YP  YP 
+                                                      
+                                                      
+           .d8888. db    db  .o88b.  .o88b. d88888b .d8888. .d8888. 
+           88'  YP 88    88 d8P  Y8 d8P  Y8 88'     88'  YP 88'  YP 
+           `8bo.   88    88 8P      8P      88ooooo `8bo.   `8bo.   
+             `Y8b. 88    88 8b      8b      88~~~~~   `Y8b.   `Y8b. 
+           db   8D 88b  d88 Y8b  d8 Y8b  d8 88.     db   8D db   8D 
+           `8888Y' ~Y8888P'  `Y88P'  `Y88P' Y88888P `8888Y' `8888Y' 
+                                                                    
+                                                                    

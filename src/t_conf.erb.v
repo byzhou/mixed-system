@@ -4,10 +4,10 @@
 module t_conf () ;
 
     //ruby initialization
-    <% CONF_BITS  = 16 %>
-    <% INIT_BITS_F = "16'hFFFF" %> 
-    <% INIT_BITS_O = "16'h0000" %> 
-    <% INIT_BITS_X = "16'hXXXX" %> 
+    <% CONF_BITS  = 4 %>
+    <% INIT_BITS_F = "4'hF" %> 
+    <% INIT_BITS_O = "4'h0" %> 
+    <% INIT_BITS_X = "4'h?" %> 
 
     //inputs, feedback signal from the system
     reg                                 O_INVU ;
@@ -29,9 +29,10 @@ module t_conf () ;
 
     always begin
         #5 CLK <= ~CLK ;
-        $display ( "UN %h, DN %h, UP %h, DP %h \n",
-                INVU_NCONF, INVD_NCONF, 
-                INVU_PCONF, INVD_PCONF ) ;
+        $display ( "UP %h, UN %h, DP %h, DP %h \n",
+                INVU_PCONF, INVU_NCONF, 
+                INVD_PCONF, INVD_NCONF 
+                ) ;
     end
 
     CONF_<%= CONF_BITS %>BITS CONF (
