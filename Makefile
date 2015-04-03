@@ -11,10 +11,12 @@ wave_tcl	:= readWaveforms.tcl
 tcl_files	:= $(tcldir)/$(readin_tcl) $(tcldir)/$(wave_tcl) 
 
 #src files
+#The part explains the idea of using shell command to select the files that you
+#need for building. It is not a good option, but it is a great practice.
 #all the erb module files
-modulefiles := $(shell ls -d $(srcdir)/* | grep "\.erb\.v" | grep -v "t_" )
+#modulefiles := $(shell ls -d $(srcdir)/* | grep "\.erb\.v" | grep -v "t_" )
 #all the erb moduel testbenches
-testBench   := $(shell ls -d $(srcdir)/* | grep "\.erb\.v" | grep "t_" )
+#testBench   := $(shell ls -d $(srcdir)/* | grep "\.erb\.v" | grep "t_" )
 #testbench after erb
 vTestBench	:= $(shell ls -d $(srcdir)/* | grep "t_" | grep -v "\.erb" )
 
@@ -36,16 +38,16 @@ vsim_vars	:= \
 
 .PHONY: prep vsim view clean all default
 
-all:vsim
+vpath %.erbv $(srcdir)
+
+#ruby rules
+$(srcdir)/t_%.v:t_%.erbv
+	erb $< > $@
 
 #verilog rules
-$(testBench):
-	erb $(srcdir)/$(toplevel).erb.v > $(srcdir)/$(toplevel).v
+t_%.erbv:%.erbv
 
-$(vTestBench): $(testBench) 
-	erb $(srcdir)/$(toplevel).erb.v > $(srcdir)/$(toplevel).v
-
-$(testBench):$(modulefiles)
+all:prep
 
 #generate the build directory
 $(build_dir): $(vTestBench)
