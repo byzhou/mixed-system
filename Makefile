@@ -11,8 +11,9 @@ wave_tcl	:= readWaveforms.tcl
 tcl_files	:= $(tcldir)/$(readin_tcl) $(tcldir)/$(wave_tcl) 
 
 #testbench after erb
-vTestBench	:= $(shell ls -d $(srcdir)/* | grep "t_" | grep "erbv")
-targetVFiles:= $(vTestBench : t_%.erbv = $(srcdir)/t_%.v)
+vSourceFiles:= $(shell ls $(srcdir) | grep "erbv" | grep -v "t_" )
+vTestBench	:= $(vSourceFiles:%.erbv=t_%.erbv)
+targetVFiles:= $(vTestBench:t_%.erbv=$(srcdir)/t_%.v)
 
 #simulate rules
 #################################################################
@@ -32,28 +33,24 @@ vsim_vars	:= \
 
 .PHONY: prep vsim view clean all default
 
-vpath t_%.erbv $(srcdir)
 vpath %.erbv $(srcdir)
 
 #ruby rules
-$(srcdir)/t_%.v : t_%.erbv
+$(srcdir)/t_%.v : t_%.erbv %.erbv
 	erb $< > $@
 
-#verilog rules
-$(srcdir)/t_%.erbv : %.erbv
-
-all:prep
+all:vsim
 
 #generate the build directory
-$(build_dir): $(targetVFiles) 
-	echo $(targetVFiles);\
+$(build_dir): $(targetVFiles) $(vTestBench)
+	echo $(vTestBench);\
 	mkdir $(build_dir);\
 	echo -e "*\n!.gitignore" > $(build_dir)/.gitignore
 
 #copy all the src files do the build directory and all the tcl files
-prep: | $(build_dir) 
+prep: $(build_dir) 
 	cp $(tcl_files) $(build_dir)/;\
-	cp $(toplevel).v $(build_dir)/;\
+	cp $(srcdir)/$(toplevel).v $(build_dir)/;\
 	echo '$(vsim_vars)' > $(build_dir)/$(makegen_tcl);\
 	echo -e "*\n!.gitignore" > $(build_dir)/.gitignore
 

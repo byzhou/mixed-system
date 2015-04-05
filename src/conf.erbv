@@ -25,10 +25,10 @@ module CONF_<%= CONF_BITS %>BITS ( INVU_NCONF, INVU_PCONF, INVD_NCONF, INVD_PCON
         REG_INVD_PCONF <= <%= INIT_BITS_F %> ;
     end
 
-    INVU_NCONF
-    INVU_NCONF
-    INVU_NCONF
-    INVU_NCONF
+    assign INVU_NCONF   = REG_INVU_NCONF ;
+    assign INVU_NCONF   = REG_INVU_NCONF ;
+    assign INVU_NCONF   = REG_INVU_NCONF ;
+    assign INVU_NCONF   = REG_INVU_NCONF ;
 
     always @(posedge CLK) begin
         casez ({O_INVU,O_INVD,INVU_PCONF,INVU_NCONF,INVD_PCONF,INVD_NCONF})

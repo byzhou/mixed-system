@@ -48,5 +48,5 @@ module t_conf () ;
 endmodule
     
     //generate LFSR_DOWNbit block
-    <%= ERB.new(File.read("src/conf.erb.v"),nil,nil,eoutvar='_sub01').result(binding) %>
+    <%= ERB.new(File.read("src/conf.erbv"),nil,nil,eoutvar='_sub01').result(binding) %>
 

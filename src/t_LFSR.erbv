@@ -53,12 +53,12 @@ endmodule
     //generate LFSR_DOWNbit block
     <% LFSR_BITS = LFSR_BITS_UP %>
     <% LFSR_INIT = LFSR_INIT_UP %>
-    <%= ERB.new(File.read("src/LFSR.erb.v"),nil,nil,eoutvar='_sub01').result(binding) %>
+    <%= ERB.new(File.read("src/LFSR.erbv"),nil,nil,eoutvar='_sub01').result(binding) %>
 
     //generate LFSR_DOWNbit block
     <% LFSR_BITS = LFSR_BITS_DOWN %>
     <% LFSR_INIT = LFSR_INIT_DOWN %>
-    <%= ERB.new(File.read("src/LFSR.erb.v"),nil,nil,eoutvar='_sub01').result(binding) %>
+    <%= ERB.new(File.read("src/LFSR.erbv"),nil,nil,eoutvar='_sub01').result(binding) %>
 
 
 
