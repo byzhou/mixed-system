@@ -2,9 +2,13 @@
 module CONF_<%= CONF_BITS %>BITS ( INVU_NCONF, INVU_PCONF, INVD_NCONF, INVD_PCONF, O_INVU, O_INVD, CLK) ;
     //The start of this code needs four variables
     //CONF_BITS INIT_BITS_F INIT_BITS_O INIT_BITS_X
-    input wire                              O_INVU ;
-    input wire                              O_INVD ;
-    input wire                              CLK ;
+    input                                   O_INVU ;
+    input                                   O_INVD ;
+    input                                   CLK ;
+
+    wire                                    O_INVU ;
+    wire                                    O_INVD ;
+    wire                                    CLK ;
 
     output [<%= CONF_BITS - 1 %>:0]         INVU_NCONF ;
     output [<%= CONF_BITS - 1 %>:0]         INVU_PCONF ;
@@ -19,16 +23,16 @@ module CONF_<%= CONF_BITS %>BITS ( INVU_NCONF, INVU_PCONF, INVD_NCONF, INVD_PCON
     initial begin
         //suppose the init bits can only be all fs or all 0s
         //INIT_BITS_X represents all xs
-        REG_INVU_NCONF <= <%= INIT_BITS_O %> ;
-        REG_INVU_PCONF <= <%= INIT_BITS_O %> ;
-        REG_INVD_NCONF <= <%= INIT_BITS_F %> ;
-        REG_INVD_PCONF <= <%= INIT_BITS_F %> ;
+        REG_INVU_NCONF <= <%= INIT_BITS_F %> ;
+        REG_INVU_PCONF <= <%= INIT_BITS_F %> ;
+        REG_INVD_NCONF <= <%= INIT_BITS_O %> ;
+        REG_INVD_PCONF <= <%= INIT_BITS_O %> ;
     end
 
     assign INVU_NCONF   = REG_INVU_NCONF ;
-    assign INVU_NCONF   = REG_INVU_NCONF ;
-    assign INVU_NCONF   = REG_INVU_NCONF ;
-    assign INVU_NCONF   = REG_INVU_NCONF ;
+    assign INVU_PCONF   = REG_INVU_PCONF ;
+    assign INVD_NCONF   = REG_INVD_NCONF ;
+    assign INVD_PCONF   = REG_INVD_PCONF ;
 
     always @(posedge CLK) begin
         casez ({O_INVU,O_INVD,INVU_PCONF,INVU_NCONF,INVD_PCONF,INVD_NCONF})
